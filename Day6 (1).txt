@@ -1,0 +1,165 @@
+Bigdata Hadoop and Spark Developer --- Day 6
+Trainer: Prashant Nair
+=========================================================================================
+
+Day6 Agenda
+---------------
+Introducing Apache Spark
+	Background and History
+	Spark and Hadoop Relationship
+	Spark Concepts and Architecture
+	Spark Ecosystem
+
+Working on RDDs
+WOrking on Dataframes
+
+
+YARN Reference Link: https://www.youtube.com/watch?v=KqaPMCMHH4g&t=5s
+
+Downgrade Python if current setup not supporting
+---------------------------------------------------
+
+Spark 2.x expects Python 3.7 and Spark 3.x expects Python 3.7,3.8
+
+conda create --name pythonsparkenv2 python=3.7
+
+conda activate pythonsparkenv2 
+
+conda install -c conda-forge findspark
+
+pip install notebook
+
+
+Apache Spark is a in-memory DISTRIBUTED processing engine.
+
+
+			Processing Capabilities Comparison
+					|
+	----------------------------------------------------------------------
+	|								     |
+     Hadoop							     Apache Spark
+(MapReduce Framework)						Execution can happen on ON-DISK		
+(Batch Processing)						and IN-MEMORY Computation
+(On-disk Computation:
+Processing happens ON-DISK)					Speed (ON-DISK: 10x faster,
+									IN-Memory: 100x faster)
+
+
+
+Apache Spark
+-------------
+
+- Fast, general purpose DISTRIBUTED processing engine for large scale data processing
+
+- When it comes to STORAGE, it relies on HDFS or HDFS-compliant storage
+
+- HDFS Compliant Storage ---> NTFS, ext4, Amazon S3, DBFS(Databricks File System), MapR                                         FileSystem
+
+- Opensource Framework
+
+- Ideally now a days Apache Spark as a Stack is used for End-to-End Analytics, Data Engineering   and Data Science Related activity on Bigdata.
+
+
+YARN
+-----
+
+- YARN stands for Yet Another Resource Negotiator
+- This is the resource management layer of Hadoop cluster
+- This service is responsible for 
+	1. Resource Allocation
+	2. Resource Reservation
+	3. Program Execution
+	4. Execution Monitoring
+	5. Resource Monitoring
+	6. Garbage Collection and Resource De-allocation
+
+
+
+
+Typical Bigdata Project phases using Apache Spark
+
+1.Data Acquisiton
+
+File  -------> copyFromLocal --------> HDFS
+		Apache Spark
+	(Load Data from local and store in HDFS)
+
+DB ----------> Apache Spark --------> HDFS
+		(Spark RDD)
+		(Spark DF)
+
+Streams -----> Apache Spark  ------> HDFS
+		(Spark Streaming)
+
+
+2.Data Preprocessing
+
+JSON
+          ----------> Apache Spark ----------> Set[CSV]
+CSV
+
+3.Data Transformation
+
+CSV ---------> Filter ---------------------> Output
+		(Apache Spark)
+
+4.Data View
+
+CSV ---------> Spark SQL --------------> Realtime/NearRealtime Output
+
+5.Intelligence Layer
+
+CSV ----> Spark ML ------> model
+
+
+
+
+Apache Spark is a Unified solution for Data Engineering, Data Anayltics and Intelligence Extraction
+
+
+Core Processing Layer of Apache Spark
+=======================================
+
+Core Abstraction Layer of Spark Core is RDD
+
+RDD --- Resilient Distributed Datasets
+
+1. Resilient ---> Fault Tolerant
+
+2. Distributed ---> Data and Execution happens on top of Distributed Engine
+
+3. Cacheable ---> You can cache your data in-memory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
